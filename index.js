@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const p = document.createElement('p')
         p.textContent = `${breweryInfo.city}, ${breweryInfo.state}       / type: ${breweryInfo.brewery_type}`
         container.append(li, a, p)
+        a.addEventListener('mouseover', highlightHoverURL)
+        a.addEventListener('mouseout', unhighlightHoverURL)
+        function highlightHoverURL(event) {
+            a.style.backgroundColor = 'yellow';
+        }
+        function unhighlightHoverURL(event) {
+            a.style.backgroundColor = '';
+        }
     }
 
     const form = document.querySelector('#brewery-city-search-form')
@@ -37,13 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const p = document.createElement('p')
                 p.textContent = brewerySearch.address_1
                 breweryContainer.append(li, a, p)
-
+                li.addEventListener('click', changeColor)
+                function changeColor(event) {
+                    event.target.style.color = "orange"
+                } 
             }))
 
     }
-
-
-
+                 // upon submit button do some clearing renderBreweryLIs
+                // need to clear the breweryContainer 
+                // create a function and invoke to display your 
 
 
 
