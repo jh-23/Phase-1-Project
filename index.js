@@ -28,7 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => data.forEach(brewerySearch => {
                 console.log(brewerySearch)
-                
+                const li = document.createElement('li')
+                li.textContent = brewerySearch.name
+                const breweryContainer = document.querySelector('#filtered-brewery-by-city-list')
+                const a = document.createElement('a')
+                a.textContent = brewerySearch.website_url
+                a.href = brewerySearch.website_url
+                const p = document.createElement('p')
+                p.textContent = brewerySearch.address_1
+                breweryContainer.append(li, a, p)
+
             }))
 
     }
