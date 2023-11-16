@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         a.textContent = breweryInfo.website_url
         a.href = breweryInfo.website_url
         const p = document.createElement('p')
-        p.textContent = `${breweryInfo.city}, ${breweryInfo.state}       / type: ${breweryInfo.brewery_type}`
+        p.textContent = `${breweryInfo.city}, ${breweryInfo.state} / type: ${breweryInfo.brewery_type}`
         container.append(li, a, p)
         a.addEventListener('mouseover', highlightHoverURL)
         a.addEventListener('mouseout', unhighlightHoverURL)
@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function unhighlightHoverURL(event) {
             a.style.backgroundColor = '';
         }
+        function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild)
+            }
+        }
+        const remover = document.querySelector('#brewery-info-container')
+        removeAllChildNodes(remover);
     }
 
     const form = document.querySelector('#brewery-city-search-form')
@@ -36,26 +43,39 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => data.forEach(brewerySearch => {
                 console.log(brewerySearch)
-                const li = document.createElement('li')
-                li.textContent = brewerySearch.name
+                let card = document.createElement('li')
+                card.className = 'card'
+                card.innerHTML = `
+                <div class="content">
+                    <h4>${brewerySearch.name}</h4>
+                    <a href=${brewerySearch.website_url}>${brewerySearch.website_url}</a>
+                    <p>Address: ${brewerySearch.address_1}</p>
+                    <p>Brewery Type: ${brewerySearch.brewery_type}
+                </div>
+                `
+
                 const breweryContainer = document.querySelector('#filtered-brewery-by-city-list')
-                const a = document.createElement('a')
-                a.textContent = brewerySearch.website_url
-                a.href = brewerySearch.website_url
-                const p = document.createElement('p')
-                p.textContent = brewerySearch.address_1
-                breweryContainer.append(li, a, p)
-                li.addEventListener('click', changeColor)
+                breweryContainer.append(card)
+                
+                card.addEventListener('click', changeColor)
                 function changeColor(event) {
                     event.target.style.color = "orange"
                 } 
+                card.addEventListener('mouseover', highlightHoverURL)
+                card.addEventListener('mouseout', unhighlightHoverURL)
+                function highlightHoverURL(event) {
+                    card.style.backgroundColor = 'yellow';
+                }
+                function unhighlightHoverURL(event) {
+                    card.style.backgroundColor = '';
+                }
             }))
 
     }
-                 // upon submit button do some clearing renderBreweryLIs
-                // need to clear the breweryContainer 
-                // create a function and invoke to display your 
+                const cityEntry = document.querySelector('#search')
+                cityEntry.addEventListener("focus", createFocusEvent)
 
-
-
+                function createFocusEvent(event) {
+                    event.target.style.background = "orange";
+                }
 })
