@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    
     fetch('https://api.openbrewerydb.org/v1/breweries')
         .then((response) => response.json())
         .then((data) => data.forEach(breweryInfo => renderBreweryInformation(breweryInfo)))
@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Brewery Type: ${brewerySearch.brewery_type}
                 </div>
                 `
-
                 const breweryContainer = document.querySelector('#filtered-brewery-by-city-list')
                 breweryContainer.append(card)
                 
