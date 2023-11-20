@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href=${brewerySearch.website_url}>${brewerySearch.website_url}</a>
                     <p>Address: ${brewerySearch.address_1}</p>
                     <p>Brewery Type: ${brewerySearch.brewery_type}</p>
+                    <p>Phone: ${brewerySearch.phone}</p>
                 </div>
                 `
                 const breweryContainer = document.querySelector('#filtered-brewery-by-city-list')
