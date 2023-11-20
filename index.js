@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     fetch('https://api.openbrewerydb.org/v1/breweries')
         .then((response) => response.json())
         .then((data) => data.forEach(breweryInfo => renderBreweryInformation(breweryInfo)))
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.addEventListener('mouseover', highlightHoverURL)
                 card.addEventListener('mouseout', unhighlightHoverURL)
                 function highlightHoverURL(event) {
-                    card.style.backgroundColor = 'yellow';
+                    card.style.backgroundColor = 'gold';
                 }
                 function unhighlightHoverURL(event) {
                     card.style.backgroundColor = '';
