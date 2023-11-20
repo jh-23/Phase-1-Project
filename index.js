@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 card.addEventListener('click', changeColor)
                 function changeColor(event) {
-                    event.target.style.color = "orange"
+                    event.target.style.color = "green"
                 } 
                 card.addEventListener('mouseover', highlightHoverURL)
                 card.addEventListener('mouseout', unhighlightHoverURL)
