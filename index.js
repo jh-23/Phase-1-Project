@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.addEventListener('mouseover', highlightHoverURL)
                 card.addEventListener('mouseout', unhighlightHoverURL)
                 function highlightHoverURL(event) {
-                    card.style.backgroundColor = 'gold';
+                    card.style.backgroundColor = 'red';
                 }
                 function unhighlightHoverURL(event) {
                     card.style.backgroundColor = '';
