@@ -1,7 +1,7 @@
 Project Title: USA City Brewery Database Search App
 
 Description:
-This web application provides an easy way to search for breweries in your city or for wherever you're traveling!  The app displays breweries based on the Open Brewery DB API (see link to API here: https://www.openbrewerydb.org/).  After searching for a particular USA city, the results will display all of the city's breweries in the database with the following information: brewery name, website link, address, and brewery type.  After the search city is entered, each brewery's information is displayed on a card.  Brewery card is highlighted when hovering over the specific card. 
+This web application provides an easy way to search for breweries in your city or for wherever you're traveling!  The app displays breweries based on the public Open Brewery DB API (see link to API here: https://www.openbrewerydb.org/).  After searching for a particular USA city, the results will display all of the city's breweries that are available in the API database with the following information: brewery name, website link, address, and brewery type.  After the search city is entered, each brewery's information is displayed on a card.  Brewery card is highlighted when hovering over the specific card. 
 
 This is my Phase 1 JavaScript Project for Flatiron School.  This project also incorporates HTML and CSS.  
 
