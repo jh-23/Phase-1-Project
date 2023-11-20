@@ -1,7 +1,7 @@
 Project Title: USA City Brewery Database Search App
 
 Description:
-This web application provides an easy way to search for breweries in your city or for wherever you're traveling!  The app displays breweries based on the Open Brewery DB API (see link to API here: https://www.openbrewerydb.org/).  After searching for a particular USA city, the results will display all of the city's breweries in the database with the following information: brewery name, website link, address, and brewery type.  After the search city is entered, each brewery's information is displayed on a card and the card is highlighted when the mouse hovers over it.
+This web application provides an easy way to search for breweries in your city or for wherever you're traveling!  The app displays breweries based on the Open Brewery DB API (see link to API here: https://www.openbrewerydb.org/).  After searching for a particular USA city, the results will display all of the city's breweries in the database with the following information: brewery name, website link, address, and brewery type.  After the search city is entered, each brewery's information is displayed on a card.  Brewery card is highlighted when hovering over the specific card. 
 
 This is my Phase 1 JavaScript Project for Flatiron School.  This project also incorporates HTML and CSS.  
 
@@ -12,12 +12,12 @@ Getting Started
 
 Dependencies:
 Project setup required linking to the correct GitHub repository for installation.  Otherwise should require no other prerequisites for use. 
-It will be required to fork and clone this GitHub repository before use in your terminal. After forking and cloning, the user can open the application by typing in 'open index.html' in their terminal.
 
-
-
-
-
+Executing Program
+It will be required to fork and clone this GitHub repository before use in your terminal. 
+Type the following code into your terminal to clone: git clone git@github.com:jh-23/Phase-1-Project.git
+Once the file has been cloned, type the following into the folder into the terminal: open index.html.
+This will open up the brewery application HTML.  
 
 Author:
 John Heger 
