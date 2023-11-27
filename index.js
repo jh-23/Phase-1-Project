@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((data) => data.forEach(breweryInfo => renderBreweryInformation(breweryInfo)))
 
     function renderBreweryInformation(event) {
-        event.preventDefault();
         console.log(breweryInfo)
         const container = document.querySelector('#brewery-info-container')
         const li = document.createElement('li')
@@ -41,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const searchCity = document.querySelector('#search')
         console.log(searchCity.value)
+
+        const breweryContainer = document.querySelector('#filtered-brewery-by-city-list')
+        breweryContainer.innerHTML = "";
+
+
         fetch(`https://api.openbrewerydb.org/v1/breweries?by_city=${searchCity.value}`)
             .then(response => response.json())
             .then(data => data.forEach(brewerySearch => {
@@ -57,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 `
                 const breweryContainer = document.querySelector('#filtered-brewery-by-city-list')
-                breweryContainer.append(card)
+                breweryContainer.appendChild(card)
                 
                 card.addEventListener('click', changeColor)
                 function changeColor(event) {
@@ -76,11 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }))
 
+        searchCity.value = "";
     }
-                const cityEntry = document.querySelector('#search')
-                cityEntry.addEventListener("focus", createFocusEvent)
 
-                function createFocusEvent(event) {
-                    event.target.style.background = "orange";
-                }
+    const cityEntry = document.querySelector('#search')
+    cityEntry.addEventListener("focus", createFocusEvent)
+
+    function createFocusEvent(event) {
+        event.target.style.background = "orange";
+    }
+    
+
 })
