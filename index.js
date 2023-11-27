@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => response.json())
         .then((data) => data.forEach(breweryInfo => renderBreweryInformation(breweryInfo)))
 
-    function renderBreweryInformation(breweryInfo) {
+    function renderBreweryInformation(event) {
+        event.preventDefault();
         console.log(breweryInfo)
         const container = document.querySelector('#brewery-info-container')
         const li = document.createElement('li')
@@ -18,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         a.addEventListener('mouseover', highlightHoverURL)
         a.addEventListener('mouseout', unhighlightHoverURL)
         function highlightHoverURL(event) {
+            console.log(event);
             a.style.backgroundColor = 'yellow';
         }
         function unhighlightHoverURL(event) {
+            console.log(event);
             a.style.backgroundColor = '';
         }
         function removeAllChildNodes(parent) {
@@ -28,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 parent.removeChild(parent.firstChild)
             }
         }
-        const remover = document.querySelector('#brewery-info-container')
-        removeAllChildNodes(remover);
+        removeAllChildNodes(container);
     }
 
     const form = document.querySelector('#brewery-city-search-form')
@@ -65,9 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.addEventListener('mouseout', unhighlightHoverURL)
                 function highlightHoverURL(event) {
                     card.style.backgroundColor = 'red';
+                    console.log(event);
                 }
+                
                 function unhighlightHoverURL(event) {
                     card.style.backgroundColor = '';
+                    console.log(event);
                 }
             }))
 
